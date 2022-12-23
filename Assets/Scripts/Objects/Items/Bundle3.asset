@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d530e8a9f23ab8047b782ae4ba91d1c2, type: 3}
+  m_Name: Bundle3
+  m_EditorClassIdentifier: 
+  id: 3
+  name: Bundle3
+  description: 'x3 Item1
+
+    x3 Item2
+
+    x1 Item3'
+  price: 2999
+  type: 1
+  avatar: {fileID: -619920025, guid: 367eaa2390bea54498dd9cb69f40b36e, type: 3}
+  isShortcut: 0
