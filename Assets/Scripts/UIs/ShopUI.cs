@@ -88,8 +88,11 @@ public class ShopUI : MonoBehaviour
 
         if (item.Price == 0)
         {
-            if (data.LastViewAds.Add(new TimeSpan(0, 1, 23)) <= DateTime.Now)
+            if (data.LastViewAds.Add(new TimeSpan(0, 1, 37)) <= DateTime.Now)
             {
+                if (!data.MyItems.ContainsKey(item.Id))
+                    data.MyItems[item.Id] = 0;
+                data.MyItems[item.Id] += 1;
                 data.LastViewAds = DateTime.Now;
                 SaveSystem.Save();
                 MainUI.Instance.SyncData();
@@ -98,7 +101,7 @@ public class ShopUI : MonoBehaviour
             else
             {
                 int i = 0;
-                for (i = 0; data.LastViewAds.Add(new TimeSpan(0, 1, 23)) > DateTime.Now.Add(new TimeSpan(0, 0, i)); i++) { }
+                for (i = 0; data.LastViewAds.Add(new TimeSpan(0, 1, 37)) > DateTime.Now.Add(new TimeSpan(0, 0, i)); i++) { }
                 UIController.Instance.OpenNoticeUI($"Vui lòng đợi {timeRemaining(i)} nữa để xem quảng cáo tiếp theo!!");
             }
             return;

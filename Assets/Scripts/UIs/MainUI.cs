@@ -49,9 +49,14 @@ public class MainUI : MonoBehaviour
 
         foreach (var i in items)
         {
+            STO_ShopItem item = GameData.Instance.ShopItems.Find(x => x.Id == i.Key);
+
             Button b = Instantiate(myItemButton);
             b.GetComponent<RectTransform>().SetParent(myItemsArea.transform);
             b.transform.localScale = new Vector3(1, 1, 1);
+
+            b.transform.GetChild(0).GetComponent<Image>().sprite = item.Avatar;
+            b.GetComponentInChildren<TMP_Text>().text = $"<color=blue>{item.Name}</color> x{i.Value}";
         }
     }
 }

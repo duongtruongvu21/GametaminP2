@@ -15,7 +15,7 @@ public class LocalData
     {
         Dolar = 0;
         MyItems = new Dictionary<int, int>();
-        LastViewAds = DateTime.Now;
+        LastViewAds = DateTime.Now.Add(new TimeSpan(0, -30, 23));
     }
 }
 
